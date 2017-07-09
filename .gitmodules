@@ -1,0 +1,9 @@
+[submodule "ceres-solver"]
+	path = ceres-solver
+	url = https://github.com/ceres-solver/ceres-solver.git
+[submodule "gflags"]
+	path = gflags
+	url = https://github.com/gflags/gflags.git
+[submodule "glog"]
+	path = glog
+	url = https://github.com/google/glog.git
