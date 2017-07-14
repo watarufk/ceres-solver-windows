@@ -24,6 +24,7 @@ cd ..
 
 cd ceres-solver_build_x64
 cmake.exe ../ceres-solver -G "Visual Studio 14 2015 Win64" -DCMAKE_SUPPRESS_REGENERATION:BOOL=TRUE ^
+-DEXPORT_BUILD_DIR:BOOL=TRUE ^
 -DEIGENSPARSE:BOOL=TRUE ^
 -DEIGEN_INCLUDE_DIR=../eigen-eigen-5a0156e40feb ^
 -DGFLAGS:BOOL=TRUE ^
