@@ -14,7 +14,6 @@ cd eigen-eigen-5a0156e40feb_build_x64_cuda
 REM eigen is header library.  BUILD_TESTING must be TRUE.
 cmake.exe ../eigen-eigen-5a0156e40feb -G "Visual Studio 14 2015 Win64" ^
 -DCMAKE_CONFIGURATION_TYPES:STRING="Release" ^
--DCMAKE_SUPPRESS_REGENERATION:BOOL=TRUE ^
 -DEIGEN_CUDA_COMPUTE_ARCH:STRING="30" ^
 -DEIGEN_TEST_CUDA:BOOL="1" ^
 -DGLUT_INCLUDE_DIR:PATH="C:\SDKs\OpenGL\include" ^
