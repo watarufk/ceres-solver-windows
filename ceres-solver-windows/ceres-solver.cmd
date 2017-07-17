@@ -18,15 +18,17 @@ cmake.exe ../ceres-solver -G "Visual Studio 14 2015 Win64" ^
 -DGFLAGS:BOOL=TRUE ^
 -DOPENMP:BOOL=TRUE ^
 -DCUSTOM_BLAS:BOOL=FALSE ^
--DEXPORT_BUILD_DIR:BOOL=TRUE
+-DEXPORT_BUILD_DIR:BOOL=TRUE ^
+-DCMAKE_INSTALL_PREFIX:PATH="C:/SDKs/ceres-solver/ceres-solver"
 
 REM DO NOT ADD -DEigen3_DIR:PATH="../eigen-eigen-5a0156e40feb_build_x64" ^
 REM NO MEANING: -DEigen_DIR:PATH="../eigen-eigen-5a0156e40feb_build_x64" ^
 
 cmake.exe --build "." --target "ALL_BUILD" --config "Release"
 cmake.exe --build "." --target "RUN_TESTS" --config "Release"
+cmake.exe --build "." --target "INSTALL" --config "Release"
 cd ..
 
 
 
-cd ceres-solver-windows
+cd /d "%~dp0"
