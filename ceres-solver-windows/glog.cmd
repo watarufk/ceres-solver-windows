@@ -6,7 +6,7 @@ mkdir glog_build_x64
 
 cd glog_build_x64
 cmake.exe ../glog -G "Visual Studio 14 2015 Win64" ^
--Dgflags_DIR:PATH="../gflags_build_x64" ^
+-Dgflags_DIR:PATH="C:/SDKs/gflags/gflags/lib/cmake/gflags" ^
 -DWITH_THREADS:BOOL=FALSE ^
 -DCMAKE_INSTALL_PREFIX:PATH="C:/SDKs/google/glog"
 
