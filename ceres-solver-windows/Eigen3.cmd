@@ -3,6 +3,10 @@ echo on
 
 
 
+SET SdksFolderPath=C:/SDKs
+
+
+
 REM If you use MKL, set the install folder path (ex. "C:\Program Files (x86)\IntelSWTools\compilers_and_libraries\windows\mkl") to environment variable "MKLROOT".
 REM About details, please refer to ../eigen-eigen-5a0156e40feb/cmake/FindBLAS.cmake
 
@@ -20,17 +24,17 @@ REM eigen is header library.  If BUILD_TESTING it not TRUE, cmake does not gener
 cmake.exe ../eigen-eigen-5a0156e40feb -G "Visual Studio 14 2015 Win64" ^
 -DEIGEN_TEST_CUDA:BOOL=TRUE ^
 -DEIGEN_TEST_OPENMP:BOOL=TRUE ^
--DBoost_INCLUDE_DIR:PATH="C:\SDKs\boost_1_64_0" ^
+-DBoost_INCLUDE_DIR:PATH="%SdksFolderPath%/boost_1_64_0" ^
 -DBUILD_TESTING:BOOL=TRUE ^
 -DCMAKE_CONFIGURATION_TYPES:STRING="Release" ^
--DCMAKE_INSTALL_PREFIX:PATH="C:/SDKs/eigen/eigen3" >> "..\ceres-solver-windows\Eigen3_cmake.txt" 2>&1
+-DCMAKE_INSTALL_PREFIX:PATH="%SdksFolderPath%/eigen/eigen3" >> "..\ceres-solver-windows\Eigen3_cmake.txt" 2>&1
 
 echo ^
 -DEIGEN_CUDA_COMPUTE_ARCH:STRING="30" ^
--DGLUT_INCLUDE_DIR:PATH="C:\SDKs\OpenGL\include" ^
--DGLUT_glut_LIBRARY:FILEPATH="C:\SDKs\OpenGL\lib\x64\freeglut.lib" ^
--DGLEW_INCLUDE_DIR:PATH="C:\SDKs\OpenGL\include" ^
--DGLEW_GLEW_LIBRARY:FILEPATH="C:\SDKs\OpenGL\lib\x64\glew64.lib" ^
+-DGLUT_INCLUDE_DIR:PATH="%SdksFolderPath%/OpenGL/include" ^
+-DGLUT_glut_LIBRARY:FILEPATH="%SdksFolderPath%/OpenGL/lib/x64/freeglut.lib" ^
+-DGLEW_INCLUDE_DIR:PATH="%SdksFolderPath%/OpenGL/include" ^
+-DGLEW_GLEW_LIBRARY:FILEPATH="%SdksFolderPath%/OpenGL/lib/x64/glew64.lib" ^
  
 
 REM msbuild Eigen3.sln /m >> "..\ceres-solver-windows\Eigen3_msbuild.txt" 2>&1
